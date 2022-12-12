@@ -50,3 +50,11 @@ so React become the best front-end tool to build application, big company like _
 4. I'M JUST UI, the rest is up to you
 
 > like react is a ui library , unlike all those framework, framework mean a hole kitchen there you have all sort of item for cooking, but react is ui library that tells that i also care fo your ui not for other thing if you need other thing you need to import another library so now once you write you react you can make any thing like for mobile use react-native for desktop use elctron for VR use react360 and also for terminal so react also handle the ui no another thing, you well notice when we start building our project so we import two libraries in react 1. the core react library and 2. React Dom that only know how to interact with DOM or web , for cross platform we have another libraries use those
+
+### want to be a great react developer
+
+focus on these thing
+
+- Decide on Components
+- Decide on the state and where it lives
+- What changes when state Changes
