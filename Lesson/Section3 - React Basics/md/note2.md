@@ -14,3 +14,7 @@ it does not really mater which way you choice to build react component
 but we know both way to make components and then you can decided which way you gonna make components
 
 _There is essentially no difference between a functional component and a class component that just implements the render method, other than the syntax. If you're trying to boost performance by eliminating unnecessary renders, both approaches provide support._
+
+### JSX
+
+It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript
