@@ -7,38 +7,57 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: [
-        {
-          name: "Linda",
-          id: 0,
-        },
-        {
-          name: "Frank",
-          id: 1,
-        },
-        {
-          name: "Jacky",
-          id: 2,
-        },
-        {
-          name: "Sparky",
-          id: 3,
-        },
-        {
-          name: "Tomy",
-          id: 4,
-        },
-      ],
+      monsters: [],
+      serachBox: "",
+      SearchField: "",
     };
+  }
+
+  // componentDidMount - render once at the component
+  componentDidMount() {
+    // this is gonna a promises
+    // fetch data from an api
+    fetch("https://jsonplaceholder.typicode.com/users").then((response) => {
+      // console.log(response);
+      response.json().then((users) =>
+        this.setState(
+          () => {
+            return { monsters: users };
+          },
+          () => {
+            console.log(this.state);
+          }
+        )
+      );
+    });
   }
 
   render() {
     // https://jsonplaceholder.typicode.com/users#
+
+    let filteredMosters = this.state.monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(this.state.serachBox);
+    });
+
     return (
       <div className="App">
         {/* <div>Hi, {this.state.name}</div> */}
+        <input
+          type="search"
+          placeholder="Search Monster"
+          className="search__box"
+          value={this.state.serachBox}
+          onChange={(e) => {
+            this.setState(() => {
+              return { serachBox: e.target.value.toLowerCase() };
+            });
+            this.setState(() => {
+              return { SearchField: filteredMosters };
+            });
+          }}
+        />
         <div>
-          {this.state.monsters.map((monster) => {
+          {filteredMosters.map((monster) => {
             return <h1 key={monster.id}>{monster.name}</h1>;
           })}
         </div>
