@@ -9,7 +9,6 @@ class App extends Component {
     this.state = {
       monsters: [],
       serachBox: "",
-      SearchField: "",
     };
   }
 
@@ -25,7 +24,7 @@ class App extends Component {
             return { monsters: users };
           },
           () => {
-            console.log(this.state);
+            // console.log(this.state);
           }
         )
       );
@@ -35,6 +34,7 @@ class App extends Component {
   render() {
     // https://jsonplaceholder.typicode.com/users#
 
+    // filter based on our input
     let filteredMosters = this.state.monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(this.state.serachBox);
     });
@@ -50,9 +50,6 @@ class App extends Component {
           onChange={(e) => {
             this.setState(() => {
               return { serachBox: e.target.value.toLowerCase() };
-            });
-            this.setState(() => {
-              return { SearchField: filteredMosters };
             });
           }}
         />
