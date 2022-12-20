@@ -1,0 +1,10 @@
+.search__box {
+  padding: 1rem 2rem;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  font-size: large;
+  font-weight: bolder;
+}
+.search__box:focus {
+  outline: none;
+}
