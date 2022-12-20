@@ -2,6 +2,7 @@ import { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
 import "./App.css";
 import SearchBox from "./components/search-box/search-box.component";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
   // let's render the element using map
@@ -55,6 +56,7 @@ class App extends Component {
           onSearchChange={onSearchChange}
         />
         <CardList monsters={filteredMosters} />
+        <Footer />
       </div>
     );
   }
