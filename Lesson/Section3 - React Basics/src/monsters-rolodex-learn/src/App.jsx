@@ -1,14 +1,16 @@
 import { Component } from "react";
+import CardList from "./components/card-list/card-list.component";
 import "./App.css";
+import SearchBox from "./components/search-box/search-box.component";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
-  // const [count, setCount] = useState(0)
   // let's render the element using map
   constructor() {
     super();
     this.state = {
       monsters: [],
-      serachBox: "",
+      searchBox: "",
     };
   }
 
@@ -30,41 +32,31 @@ class App extends Component {
       );
     });
   }
-
+  onSearchChange = (e) => {
+    const searchField = e.target.value.toLowerCase();
+    this.setState(() => {
+      return { searchBox: searchField };
+    });
+  };
   render() {
-    // https://jsonplaceholder.typicode.com/users#
+    const { onSearchChange } = this;
+    const { monsters, searchBox } = this.state;
+    // https://jsonplaceholder.typicode.com/users
 
     // filter based on our input
-    let filteredMosters = this.state.monsters.filter((monster) => {
-      return monster.name.toLowerCase().includes(this.state.serachBox);
+    let filteredMosters = monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(searchBox);
     });
 
     return (
       <div className="App">
-        {/* <div>Hi, {this.state.name}</div> */}
-        <input
-          type="search"
-          placeholder="Search Monster"
-          className="search__box"
-          value={this.state.serachBox}
-          onChange={(e) => {
-            this.setState(() => {
-              return { serachBox: e.target.value.toLowerCase() };
-            });
-          }}
+        <SearchBox
+          searchBox={searchBox}
+          placeholder="Search for Monster"
+          onSearchChange={onSearchChange}
         />
-        <div>
-          {filteredMosters.map((monster) => {
-            return <h1 key={monster.id}>{monster.name}</h1>;
-          })}
-        </div>
-        {/* <button
-          onClick={() => {
-            this.setState({ name: "Hari om Singh" });
-          }}
-        >
-          Change name
-        </button> */}
+        <CardList monsters={filteredMosters} />
+        <Footer />
       </div>
     );
   }

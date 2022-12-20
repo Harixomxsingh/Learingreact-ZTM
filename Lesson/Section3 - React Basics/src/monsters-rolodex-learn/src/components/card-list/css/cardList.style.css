@@ -1,0 +1,40 @@
+.box {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 12px;
+  row-gap: 12px;
+}
+.card-container {
+  background-color: skyblue;
+  opacity: 0.8;
+  transition: 0.2s all ease;
+  color: black;
+}
+.card-container:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.monster__img {
+  width: 10rem;
+  height: 10rem;
+}
+@media screen and (max-width: 768px) {
+  .card-container {
+    font-size: 10px;
+  }
+  .monster__img {
+    width: 50%;
+    height: 50%;
+  }
+  .card-container:hover {
+    transform: scale(0.9);
+  }
+}
