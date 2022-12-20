@@ -55,12 +55,12 @@ class App extends Component {
           value={searchBox}
           onChange={onSearchChange}
         />
-        <div>
+        {/* <div>
           {filteredMosters.map((monster) => {
             return <h1 key={monster.id}>{monster.name}</h1>;
           })}
-        </div>
-        <CardList />
+        </div> */}
+        <CardList monsters={filteredMosters} />
       </div>
     );
   }
