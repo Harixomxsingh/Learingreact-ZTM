@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
       <>
         <footer>
-          Made with ❤ by{" "}
+          Made with <span>❤</span> by{" "}
           <a href="https://www.twitter.com/Harixomxsingh" target={"_blank"}>
             Hari om Singh
           </a>

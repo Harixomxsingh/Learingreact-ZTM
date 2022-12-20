@@ -8,3 +8,9 @@
 .search__box:focus {
   outline: none;
 }
+@media screen and (max-width: 768px) {
+  .search__box {
+    font-size: small;
+    padding: 0.3rem 0.5rem;
+  }
+}
