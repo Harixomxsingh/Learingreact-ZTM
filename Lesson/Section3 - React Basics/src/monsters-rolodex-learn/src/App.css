@@ -14,4 +14,9 @@ body {
   color: white;
   text-align: center;
   font-family: "Creepster", cursive, monospace;
+  /* display: flex; */
+  /* flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+  margin: 0 auto;
 }
