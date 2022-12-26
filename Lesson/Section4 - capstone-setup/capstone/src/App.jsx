@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
+  const categorys = [
+    { id: 1, title: "Hats" },
+    { id: 2, title: "Jacket" },
+    { id: 3, title: "Sneakers" },
+    { id: 4, title: "Mens" },
+    { id: 5, title: "Womens" },
+  ];
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="">
+      <div className="categories-container">
+        {categorys.map((category) => {
+          return (
+            <div className="category-container" key={category.id}>
+              {/* img  */}
+              <div className="background-img"></div>
+              <div className="category-body-container">
+                <h2>{category.title}</h2>
+                <p>shop-now</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
