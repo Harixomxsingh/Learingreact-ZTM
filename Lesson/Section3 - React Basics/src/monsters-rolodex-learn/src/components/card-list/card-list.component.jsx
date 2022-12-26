@@ -6,7 +6,7 @@ class cardList extends Component {
     // console.log(props);
     console.log(monsters);
     return (
-      <div>
+      <div className="box__parent">
         <h1>Monsters Park</h1>
         <section className="box">
           {monsters.map((monster) => {
