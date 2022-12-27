@@ -1,6 +1,6 @@
 import React from "react";
 import DicectoryComponent from "../../components/directory/directory-component";
-// import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 export const Home = () => {
   const categorys = [
     {
@@ -31,7 +31,7 @@ export const Home = () => {
   ];
   return (
     <div>
-      {/* <Outlet /> */}
+      <Outlet />
       <DicectoryComponent categorys={categorys} />
     </div>
   );
