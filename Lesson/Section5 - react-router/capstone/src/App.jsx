@@ -10,10 +10,10 @@ function Shop() {
 function App() {
   return (
     <div className="">
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="hello" element={<Hello />} />
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<Home />} />
+          <Route path="/hello" element={<Hello />} />
         </Route>
       </Routes>
     </div>
