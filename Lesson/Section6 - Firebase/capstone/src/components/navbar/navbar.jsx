@@ -47,7 +47,7 @@ const Navbar = () => {
             </svg>
             Shop
           </Link>
-          <Link to={"/cart"} className="nav__link">
+          {/* <Link to={"/cart"} className="nav__link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -63,6 +63,9 @@ const Navbar = () => {
               />
             </svg>
             Cart
+          </Link> */}
+          <Link className="nav__link" to={"/Sign-in"}>
+            Sign In
           </Link>
         </div>
       </div>
