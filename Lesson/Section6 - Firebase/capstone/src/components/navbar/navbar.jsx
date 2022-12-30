@@ -64,7 +64,7 @@ const Navbar = () => {
             </svg>
             Cart
           </Link> */}
-          <Link className="nav__link" to={"/Sign-in"}>
+          <Link className="nav__link" to={"/auth"}>
             Sign In
           </Link>
         </div>
