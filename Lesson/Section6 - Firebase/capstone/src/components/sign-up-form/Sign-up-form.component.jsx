@@ -1,8 +1,11 @@
 import { useState } from "react";
+import FormInput from "../form-input/Form-input.component";
+import "./sign-up-form.scss";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../utils/firebase/firebase.utils";
+import { ButtonComponent } from "../button/button.component";
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -12,7 +15,7 @@ const defaultFormFields = {
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password } = formFields;
-  console.log(formFields);
+  //   console.log(formFields);
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -41,11 +44,12 @@ const SignUpForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
   return (
-    <div>
-      <h1>Sign Up with your email and password</h1>
+    <div className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign Up with your email and password</span>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="display-name">display name: </label>
-        <input
+        <FormInput
+          label={"Name: "}
           type="text"
           value={displayName}
           onChange={handleChange}
@@ -53,8 +57,8 @@ const SignUpForm = () => {
           id="display-name"
           required
         />
-        <label htmlFor="email">Email: </label>
-        <input
+        <FormInput
+          label={"Email: "}
           type="email"
           value={email}
           onChange={handleChange}
@@ -63,8 +67,8 @@ const SignUpForm = () => {
           required
           autoComplete="off"
         />
-        <label htmlFor="Password">Password: </label>
-        <input
+        <FormInput
+          label={"Password: "}
           type="Password"
           value={password}
           onChange={handleChange}
@@ -72,7 +76,9 @@ const SignUpForm = () => {
           id="Password"
           required
         />
-        <button type="submit">submit</button>
+        <ButtonComponent buttonType={"inverted"} type="submit">
+          submit
+        </ButtonComponent>
       </form>
     </div>
   );
