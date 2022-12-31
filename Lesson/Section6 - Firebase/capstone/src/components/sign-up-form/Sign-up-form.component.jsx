@@ -67,6 +67,7 @@ const SignUpForm = () => {
           required
           autoComplete="off"
         />
+        {/* test  */}
         <FormInput
           label={"Password: "}
           type="Password"
