@@ -24,8 +24,8 @@ const SignInForm = () => {
 
   const { setCurrentUser } = useContext(userContext);
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    // const { user } = await signInWithGooglePopup();
+    // await createUserDocumentFromAuth(user);
     // console.log(response);
   };
   const handleSubmit = async (e) => {
@@ -36,7 +36,7 @@ const SignInForm = () => {
         email,
         password
       );
-      setCurrentUser(user);
+      // setCurrentUser(user);
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/wrong-password") {
@@ -55,7 +55,7 @@ const SignInForm = () => {
   return (
     <div className="sign-up-container">
       <h2>Already have an account?</h2>
-      <span>Sign Up with your email and password</span>
+      <span>Sign in with your email and password</span>
       <form action="" onSubmit={handleSubmit}>
         <FormInput
           label={"Email: "}
@@ -82,9 +82,9 @@ const SignInForm = () => {
             Sign - in
           </ButtonComponent>
 
-          <ButtonComponent type="button" buttonType={"google"}>
+          {/* <ButtonComponent type="button" buttonType={"google"}>
             Google Sign - in
-          </ButtonComponent>
+          </ButtonComponent> */}
         </div>
       </form>
     </div>

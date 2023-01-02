@@ -7,10 +7,6 @@ import { signOutUser } from "../utils/firebase/firebase.utils";
 
 const Navbar = () => {
   const { currentUser, setCurrentUser } = useContext(userContext);
-  const signOutHandler = async () => {
-    const res = await signOutUser();
-    setCurrentUser(null);
-  };
   return (
     <>
       <div className="nav">
@@ -72,7 +68,7 @@ const Navbar = () => {
             Cart
           </Link> */}
           {currentUser ? (
-            <span className="nav-link" onClick={signOutHandler}>
+            <span className="nav__link" onClick={signOutUser}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
