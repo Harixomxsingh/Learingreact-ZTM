@@ -33,7 +33,7 @@ const Navbar = () => {
             </svg>
             Home
           </Link>
-          <Link to={"/hello"} className="nav__link">
+          <Link to={"/shop"} className="nav__link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
