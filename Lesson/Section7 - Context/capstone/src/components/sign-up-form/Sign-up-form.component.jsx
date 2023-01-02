@@ -5,7 +5,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../utils/firebase/firebase.utils";
-import { ButtonComponent } from "../button/button.component";
+import { Button } from "../button/button.component";
 import { userContext } from "../../contexts/user.context";
 const defaultFormFields = {
   displayName: "",
@@ -81,9 +81,9 @@ const SignUpForm = () => {
           id="Password"
           required
         />
-        <ButtonComponent buttonType={"inverted"} type="submit">
+        <Button buttonType={"inverted"} type="submit">
           submit
-        </ButtonComponent>
+        </Button>
       </form>
     </div>
   );

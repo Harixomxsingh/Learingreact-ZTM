@@ -5,16 +5,14 @@ import { Hello } from "./components/hello";
 import Navbar from "./components/navbar/navbar";
 import SignComponent from "./components/auth/Authentication.component";
 import { Home } from "./routes/home/home.component";
-function Shop() {
-  return <div>this is home/shope page</div>;
-}
+import { Shop } from "./routes/shop/shop.component";
 function App() {
   return (
     <div className="">
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
-          <Route path="/hello" element={<Hello />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/auth" element={<SignComponent />} />
         </Route>
       </Routes>
