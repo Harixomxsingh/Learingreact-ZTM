@@ -7,7 +7,7 @@ import {
   createUserDocumentFromAuth,
   signInWithGooglePopup,
 } from "../utils/firebase/firebase.utils";
-import { ButtonComponent } from "../button/button.component";
+import { Button } from "../button/button.component";
 import { userContext } from "../../contexts/user.context";
 const defaultFormFields = {
   email: "",
@@ -78,13 +78,13 @@ const SignInForm = () => {
           required
         />
         <div className="buttonContainer">
-          <ButtonComponent buttonType={"inverted"} type="submit">
+          <Button buttonType={"inverted"} type="submit">
             Sign - in
-          </ButtonComponent>
+          </Button>
 
-          {/* <ButtonComponent type="button" buttonType={"google"}>
+          {/* <Button type="button" buttonType={"google"}>
             Google Sign - in
-          </ButtonComponent> */}
+          </Button> */}
         </div>
       </form>
     </div>
