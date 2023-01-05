@@ -109,6 +109,7 @@ const Navbar = () => {
           )}
           <div className="nav-link">
             <CartIcon />
+            Cart
           </div>
           {/* <Link to={"/cart"} className="nav-link">
           </Link> */}
